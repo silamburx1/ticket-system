@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Support Desk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><strong>Support Desk Admin</strong><a href="index.html">Raise a ticket</a><a href="#" id="logout" class="hidden">Log out</a></header>
+<main>
+  <section id="login">
+    <h1>Admin login</h1>
+    <form id="loginForm">
+      <label for="user">Username</label><input id="user" autocomplete="username" required>
+      <label for="pass">Password</label><input id="pass" type="password" autocomplete="current-password" required>
+      <button type="submit">Log in</button>
+    </form>
+    <div id="loginMsg" class="msg err hidden" role="alert"></div>
+  </section>
+  <section id="panel" class="hidden">
+    <div class="toolbar">
+      <div><h1>Tickets</h1></div>
+      <div><label for="filter">Show</label>
+        <select id="filter"><option value="">All</option><option value="OPEN">Open</option>
+        <option value="IN_PROGRESS">In progress</option><option value="RESOLVED">Resolved</option></select></div>
+    </div>
+    <div id="list"></div>
+  </section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

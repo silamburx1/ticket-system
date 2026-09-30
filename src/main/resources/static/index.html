@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Desk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><strong>Support Desk</strong><a href="index.html">Raise a ticket</a><a href="admin.html">Admin</a></header>
+<main>
+  <section aria-labelledby="new">
+    <h1 id="new">Raise a ticket</h1>
+    <p class="sub">Describe your problem and we'll reply with a solution. Keep your ticket number to check progress.</p>
+    <form id="ticketForm">
+      <div class="row">
+        <div><label for="name">Your name</label><input id="name" required maxlength="100"></div>
+        <div><label for="email">Email</label><input id="email" type="email" required maxlength="150"></div>
+      </div>
+      <label for="title">Title</label><input id="title" required maxlength="150">
+      <label for="priority">Priority</label>
+      <select id="priority"><option>LOW</option><option selected>MEDIUM</option><option>HIGH</option></select>
+      <label for="description">What's happening?</label><textarea id="description" required maxlength="2000"></textarea>
+      <button type="submit">Submit ticket</button>
+    </form>
+    <div id="createMsg" class="msg hidden" role="status"></div>
+  </section>
+
+  <section aria-labelledby="trk">
+    <h2 id="trk">Check a ticket</h2>
+    <form id="trackForm" class="toolbar">
+      <div><label for="tid">Ticket number</label><input id="tid" type="number" min="1" required></div>
+      <div><label for="temail">Email used</label><input id="temail" type="email" required></div>
+      <button type="submit">Check status</button>
+    </form>
+    <div id="result"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
